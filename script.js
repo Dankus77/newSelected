@@ -1,14 +1,21 @@
-let mainContainer = document.querySelector('.my_container');
-let containerChildren = mainContainer.children;
-function selectItem(){
-    console.log(childElement);
-    let childElement = mainContainer.getElementsByTagName('div');
-      for(let i=0; i<childElement.length; i++){
-        if(childElement[i]!==(childElement[i+1])){
-            childElement[i].style.backgroundColor = 'rgba(200, 0, 0.1)';
-            childElement[i].style.borderBottom = '3px solid red';
-        }
-        return childElement[i];
-      }
-    }
-containerChildren.addEventListener('click', selectItem);
+/*let mainList = document.querySelector('.my_container');
+let ListElement = mainList.childNodes;
+ListElement.addEventListener('click', function toggleSelect(event){
+event.target.style.userSelect = 'all';
+//event.getElementsByTagName('div').target.style.borderBottom = '3px solid transparent';
+});*/
+
+let vegetables = document.querySelectorAll('.vegetable');
+vegetables.forEach((el)=>{
+  el.addEventListener('click', (ev) =>{
+    removeClass(vegetables)
+    ev.target.classList.add('item_selected');
+  });
+  
+});
+
+const removeClass = arr =>{
+  for(let i = 0; i < arr.length; i++){
+    arr[i].classList.remove('item_selected');
+  }
+}
